@@ -1,0 +1,11 @@
+{
+  "firstName": "Cheb",
+  "lastName": "Khaled",
+  "email": "khaled@rai.com",
+  "password": "didi",
+  "street": "101 non main street",
+  "city": "Las Vegas",
+  "zip": "50001",
+  "passengersCount": "3",
+  "expectedPrice": "$1753 USD"
+}
