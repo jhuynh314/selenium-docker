@@ -15,7 +15,11 @@ pipeline {
         }
 
         stage('Push Image'){
+            environment {
+                DOCKER_HUB  = credentials('dockerhub-creds')
+            }
             steps {
+                bat 'docker login -u %DOCKER_HUB_USR% -p %DOCKER_HUB_PSW%'
                 bat "docker push jhuynh14/selenium"
             }
         }
@@ -32,7 +36,8 @@ pipeline {
             echo "I was aborted"
         }
         always{
-            echo "doing clean up"
+            echo "Logging out"
+            bat "docker logout"
         }
     }
 }
